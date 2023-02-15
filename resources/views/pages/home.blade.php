@@ -8,12 +8,7 @@
         <h2>{{ $category -> name }}</h2>
         <ul>
             @foreach ($category -> products as $product)
-                <li>
-                    [{{ $product -> code }}] {{ $product -> name }}
-                    - {{ $product -> typology -> name }}
-                    - DIGITAL: 
-                    {{ $product -> typology -> digital ? "YES" : "NO" }}
-                </li>
+                @include('components.product.product-elem')
             @endforeach
         </ul>
     @endforeach
